@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Tux Docs">
+    <meta property="og:description" content="All Tux#4129 commands and features listed in one place to help you unlock the full potential of the bot!">
+    <meta property="og:image" content="https://media.discordapp.net/attachments/1213837998366396508/1275599997424898159/Tux1.png?ex=66c67a92&is=66c52912&hm=992330999afdb3e9c48108fdfdfaad4b696c6042cc3bf807d3ddc3e95cd44de8&=&format=webp&quality=lossless&width=522&height=522">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Tux Docs</title>
+    <link rel="icon" href="Tux.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .title-nav {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 98%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            backdrop-filter: blur(3px);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+        .title-nav h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #ffffff;
+        }
+        .icon-links {
+            display: flex;
+            align-items: center;
+        }
+        .icon-links img {
+            height: 25px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .icon-links img:hover {
+            transform: scale(1.1);
+        }
+        .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        .left-nav {
+            width: 250px;
+            background: rgba(44, 44, 44, 0.8);
+            padding: 20px;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            backdrop-filter: blur(3px);
+        }
+        .left-nav h2 {
+            color: #e0e0e0;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .left-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .left-nav ul li {
+            margin: 10px 0;
+        }
+        .left-nav ul li a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .left-nav ul li a:hover {
+            color: #ffffff;
+        }
+        .content {
+            margin-left: 295px;
+            margin-right: 3px;
+            padding: 20px;
+            margin-top: 75px;
+            flex: 1;
+            background: rgba(31, 31, 31, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(3px);
+        }
+        .content h2 {
+            font-size: 20px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .left-nav {
+                width: 100%;
+                position: static;
+                padding: 10px;
+                box-shadow: none;
+                background: rgba(44, 44, 44, 0.9);
+            }
+            .left-nav ul li {
+                margin: 8px 0;
+            }
+            .content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .title-nav h1 {
+                font-size: 18px;
+            }
+            .icon-links img {
+                height: 20px;
+                margin-right: 10px;
+            }
+            .search input {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .title-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .title-nav h1 {
+                font-size: 16px;
+            }
+            .icon-links {
+                margin-top: 10px;
+            }
+            .icon-links img {
+                height: 18px;
+                margin-right: 8px;
+            }
+            .search input {
+                font-size: 10px;
+            }
+            .left-nav {
+                width: 100%;
+                position: static;
+                padding: 5px;
+            }
+            .left-nav h2 {
+                font-size: 16px;
+            }
+            .content {
+                padding: 10px;
+            }
+            .content h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-nav">
+        <div class="logo-container">
+            <img src="Tux.png" alt="Logo" class="logo">
+            <h1>Tux Bot Documentation</h1>
+        </div>
+        <div class="icon-links">
+            <a href="https://discord.com/invite/A2rQsnQMvy" target="_blank">
+                <img src="discowd.png" alt="Discord">
+            </a>
+            <a href="https://github.com/akeanti" target="_blank">
+                <img src="gitwob.png" alt="GitHub">
+            </a>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </div>
+    <div class="left-nav">
+        <h2>Terms of Service</h2>
+        <ul>
+            <li><a href="#compliance">Compliance</a></li>
+            <li><a href="#acceptable-use">Acceptable Use</a></li>
+            <li><a href="#account-safety">Account Safety</a></li>
+            <li><a href="#data-usage">Data Usage</a></li>
+            <li><a href="#dispute-resolution">Dispute Resolution</a></li>
+            <li><a href="#changes">Changes to Terms</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <section id="compliance">
+            <h2>1. Compliance</h2>
+            <p>By using Tux#4129, you agree to follow Discord’s Terms of Service and Community Guidelines. Violations of these rules can result in suspension or removal from the bot.</p>
+        </section>
+        <section id="acceptable-use">
+            <h2>2. Acceptable Use</h2>
+            <p>Do not use Tux#4129 for any illegal activities, harassment, spamming, or other disruptive behavior. Abusive actions may lead to immediate ban and possible reporting to Discord.</p>
+        </section>
+        <section id="account-safety">
+            <h2>3. Account Safety</h2>
+            <p>Keep your account credentials secure. If you suspect any unauthorized use of your account, notify the bot’s support team immediately. We are not responsible for any damages caused by compromised accounts.</p>
+        </section>
+        <section id="data-usage">
+            <h2>4. Data Usage</h2>
+            <p>Tux#4129 collects minimal data to function properly, such as server and channel IDs. This data is used only for improving bot performance and is not shared with third parties.</p>
+            <section id="dispute-resolution">
+                <h2>5. Dispute Resolution</h2>
+                <p>Any disputes related to Tux#4129 should be addressed directly with the bot’s support team through Discord or GitHub. We aim to resolve issues amicably and provide a satisfactory resolution where possible.</p>
+            </section>
+            <section id="changes">
+                <h2>6. Changes to Terms</h2>
+                <p>We may update these terms occasionally. Significant changes will be announced through our official channels, including Discord and GitHub. Continued use of the bot after any updates implies acceptance of the revised terms.</p>
+            </section>
+            <section id="contact">
+                <h2>7. Contact</h2>
+                <p>If you have any questions or need assistance, please reach out to us via our official Discord server or GitHub page. We’re here to help with any issues or queries you may have regarding Tux#4129.</p>
+            </section>
+        </div>
+    </body>
+    </html>
+    
